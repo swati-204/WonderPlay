@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/Word-Game/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+    <title>Word Guessing Game</title>
+</head>
+<body>
+    <button id="back"><a href="/home.html" style="color:black; text-decoration: none;">Go back</a></button>
+    <div class="container">
+        <h1 class="title">Word Guessing Game</h1>
+    <p class="hint">Hello</p>
+    <input type="text" id="userInput" />
+    <button class="button" onclick="guessWord()" >Submit</button>
+
+    </div>
+    <script>
+        var secretWords = [
+        {"word": "Apple", "hint": "Fruit"},
+        {"word": "Dog", "hint": "Furry friend"},
+        {"word": "Circle", "hint": "Round shape"},
+        {"word": "Happy", "hint": "Feeling of joy"},
+        {"word": "Water", "hint": "Transparent liquid"},
+        {"word": "Jump", "hint": "Vertical motion"},
+        {"word": "Key", "hint": "Unlocks doors"},
+        {"word": "Cloud", "hint": "White fluffy in the sky"},
+        {"word": "Green", "hint": "Color of grass"},
+        {"word": "Song", "hint": "Musical composition"},
+        {"word": "Laugh", "hint": "Expression of amusement"},
+        {"word": "Car", "hint": "Automobile"},
+        {"word": "Moon", "hint": "Natural satellite"},
+        {"word": "Sleep", "hint": "Resting state"},
+        {"word": "Star", "hint": "Shining in the night sky"},
+        {"word": "Read", "hint": "Interpret written words"},
+        {"word": "Sunset", "hint": "Evening sky"},
+        {"word": "Warm", "hint": "Opposite of cold"},
+        {"word": "Run", "hint": "Move swiftly on foot"},
+        {"word": "Smile", "hint": "Facial expression of happiness"}
+      ]
+
+      let secWord = secretWords[Math.floor(Math.random()*secretWords.length)];
+      document.querySelector('.hint').innerHTML = `Hint: ${secWord.hint}`
+      
+        function guessWord() {
+            var userInput = document.getElementById('userInput').value;
+            userInput = userInput.toUpperCase();
+            console.log(userInput)
+            console.log(secWord.word.toUpperCase())
+            
+            if (userInput.trim() === "") {
+                alert("Please enter a valid word!");
+                return;
+            }
+            if (userInput == (secWord.word).toUpperCase()) {
+                alert("Right answer!");
+            } else {
+                alert(`Wrong answer. Answer: ${secWord.word}`);
+            }
+            secWord = secretWords[Math.floor(Math.random()*secretWords.length)];
+
+            secWord = secretWords[Math.floor(Math.random()*secretWords.length)];
+            document.querySelector('.hint').innerHTML = `Hint: ${secWord.hint}`
+            document.getElementById('userInput').value = "";
+        }
+    </script>
+</body>
+</html>

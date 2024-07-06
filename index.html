@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Gaming Web App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rubik+Maps&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+ 
+</head>
+
+
+<body>
+
+
+  <img class="img-style" src="/images/Play! (1) (1).png" alt="">
+  <img class="img-style" src="/images/Play! (2).png" alt="">
+  <img class="img-style" src="/images/Untitled design (1) (1).png" alt="">
+  <img class="img-style" src="/images/Untitled design (2) (1).png" alt="">
+  <img class="img-style" src="/images/Untitled design (3) (1).png" alt="">
+  <img class="img-style" src="/images/Untitled design (4) (1).png" alt="">
+  <img class="img-style" src="/images/Untitled_design-removebg.png" alt="">
+
+<!-- Sign Up Form -->
+<div id="signupForm" class="detailContainer">
+  <h1 style=" font-size:48px; margin-top:50px; margin-bottom:10px; color:yellow; font-family: 'Sacramento', cursive; font-weight:500">Wonder Play</h1>
+  <h3 style="padding-bottom:20px;">Sign Up</h3>
+  <form id="signUp">
+    Username:<input type="text" name ="user" id="signupUsername" required><br>
+    Password: <input type="password" name="pass" id="signupPassword" required><br>
+    <button class="button" type="button" onclick="signup()">Sign Up</button>
+    <p style="padding-top:30px">Already have an Account? <span style="color:yellow" onclick="existingUser()" class="underline">Log in</span></p>
+  </form>
+</div>
+
+<!-- Login Form -->
+<div id="loginForm" class="detailContainer login">
+  <h1 style=" font-size:48px; margin-top:50px; margin-bottom:10px; color:yellow; font-family: 'Sacramento', cursive; font-weight:500">Wonder Play</h1>
+  <h3 style="padding-bottom:20px;">Log In</h3>
+  <form id="login">
+    Username: <input type="text" id="loginUsername" required><br>
+    Password: <input type="password" id="loginPassword" required><br>
+    <button class="button" type="button" onclick="login()">Login</button>
+    <p style="padding-top:30px; text-align:center">Don't have an Account? <span style="color:yellow" onclick="newUser()" class="underline">Sign Up</span></p>
+  </form>
+</div>
+
+<!-- Home Page -->
+<div id="homePage" class="home-page">
+  <h2>Welcome to Wonder Play!</h2>
+  <p>Choose a game to play:</p>
+  <button class="gameButton" onclick="playGame('Game 1')">Play Game 1</button>
+  <button class="gameButton" onclick="playGame('Game 2')">Play Game 2</button>
+  <button class="gameButton" onclick="playGame('Game 3')">Play Game 3</button>
+  <button class="gameButton" onclick="playGame('Game 4')">Play Game 4</button>
+</div>
+
+<script>
+
+  const UserDetails = JSON.parse(localStorage.getItem('details')) || [];
+    const UserNames = UserDetails.map((user) => user.username);
+
+  function signup() {
+    const username = document.getElementById('signupUsername').value;
+    const password = document.getElementById('signupPassword').value;
+
+    
+    const UserNames = UserDetails.map((user) => user.username);
+
+    if (UserNames.find(ele => username == ele)) {
+      alert('User Already Exists!');
+      return;
+    } 
+
+    if(!username || !password){
+        alert('Please enter your username and password');
+        return;
+    }
+    else {
+      const details = {
+        username,
+        password
+      }
+    UserDetails.push(details);
+    localStorage.setItem('details', JSON.stringify(UserDetails));
+
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'flex';
+    }
+    
+  }
+
+  function login() {
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+
+    if (UserDetails.find((user) => {
+       return user.username === username && user.password === password}
+       )) {
+        window.open('/home.html');
+    } else {
+      alert('Invalid username or password. Please try again.');
+    }
+  }
+
+  function playGame(gameName) {
+    alert('Playing ' + gameName);
+  }
+
+  function existingUser (){
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('loginForm').style.display = 'flex';
+  }
+  function newUser (){
+    document.getElementById('signupForm').style.display = 'flex';
+    document.getElementById('loginForm').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

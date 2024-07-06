@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+body{
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("bamboo3.jpg");
+    background-size: cover;
+}
+#heading{
+    margin-top: 5px;
+    font-size: 50px;
+    color: rgb(16, 14, 13);
+}
+p{
+    font-size: 25px;
+}
+#Board{
+    width:450px;
+    height: 450px;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+#Digits{
+    width:450px;
+    height: 50px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}    
+.number{
+    width:44px;
+    height:44px;
+    border: 1px solid black;
+    margin: 2px;
+    font-size:20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.tile{
+    width:48px;
+    height:48px;
+    border: 1px solid rgb(46, 99, 145);
+    font-size:20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+#back{
+    font-size: 25px;
+    background-image: linear-gradient(rgb(168, 191, 214),rgb(112, 153, 210));
+    border: 1px solid light rgb(91, 91, 91);
+    border-radius: 35px;
+    color: white;
+    width: 10%;
+    font-family: 'Acme', sans-serif;
+    position:absolute;
+    left:80px;
+    top:70px;
+    
+  }
+
+.number-selected{
+    background-color:rgb(174, 173, 173);
+}
+
+.start{
+    background-color: rgb(204, 241, 241);
+}
+#error{
+    color: rgb(241, 72, 72);
+    text-align: center;
+    font-size: 30px;
+}
+.horizontal{
+    border-bottom: 1px solid black;
+}
+.vertical{
+    border-right: 2px solid black;
+}
+#difficulty{
+    border: 1px solid black;
+    border-radius: 25px;
+    justify-content: space-between;
+    width:450px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+
+    
+}
+.levels{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    color: black;
+    display: flex;
+}
+
+.right {
+    background-color: rgb(152, 230, 152);
+}
+

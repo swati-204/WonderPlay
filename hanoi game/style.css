@@ -1,0 +1,210 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+body {
+    text-align: center;
+    font-family: "Kaushan Script";
+    margin: 0 auto;
+    /*background-image:url("panel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    /* background: rgb(39, 39, 41); */
+    
+    background-image: linear-gradient(rgb(174, 166, 176),rgb(155, 110, 155),rgb(100, 59, 101));
+     color: white; 
+  }
+  #back{
+    font-size: 25px;
+    background-image: linear-gradient(rgb(216, 216, 213),rgb(107, 105, 104));
+    border: 1px solid light rgb(91, 91, 91);
+    border-radius: 35px;
+    color: white;
+    width: 10%;
+    font-family: "Kaushan Script";
+    position:absolute;
+    left:10px;
+    
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin: -20px 0px 0px 0px;
+  }
+  h1 {
+    font-family: "Kaushan Script";
+    color:black;
+    font-size: 80px;
+    margin: 20px 0px 40px 0px;
+  }
+  p {
+    margin: 30px 10%;
+    line-height: 25px;
+  }
+  span {
+    color: white;
+  }
+  .button-div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+  }
+  .resetbutton,
+  .testbutton,
+  .move-counter,
+  .easymode,
+  .normalmode,
+  .hardmode {
+    font-size: 32px;
+    background-image: linear-gradient(rgb(177, 155, 228),rgba(45, 42, 212, 0.374));
+    border: 5px solid light rgb(18, 18, 18);
+    border-radius: 5px;
+    margin: 15px 10px;
+    color: black;
+    width: 20%;
+    font-family: "Kaushan Script";
+  }
+  .resetbutton {
+    display: none;
+  }
+  .panels {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border: 5px solid light yellow;
+    width: 28%;
+    margin: 0 10px;
+    height: 90%;
+  }
+  .first-panel,
+  .second-panel,
+  .third-panel {
+    padding: 0px 0px 10px 0px;
+    border-radius: 10px;
+    /* background-image: url("image.jpg"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;*/
+  }
+  .first-panel 
+  {
+    
+    background-image:url("tower1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .second-panel 
+  {
+    
+    background-image:url("tower2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .third-panel 
+  {
+    
+    background-image:url("tower3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  
+
+  .box {
+    padding: 20px 15px;
+    margin: 2px 0;
+    border: 5px solid light rgb(231, 231, 223);
+    border-radius: 25px;
+    background:#929cce;
+    cursor: pointer;
+  }
+  .box-a {
+    width: 8%;
+    background:rgb(148, 211, 230);
+  }
+  .box-b {
+    width: 18%;
+    background:rgb(121, 195, 217);
+  }
+  .box-c {
+    width: 28%;
+    background:rgb(71, 169, 198);
+  }
+  .box-d {
+    width: 38%;
+    background:rgb(24, 163, 205);
+  }
+  .box-e {
+    width: 48%;
+    background:rgb(88, 127, 205);
+  }
+  .box-f {
+    width: 58%;
+    background:rgb(59, 107, 229);
+    display: none;
+  }
+  .win-screen {
+    display: none;
+    margin: 0px 0px 20px 0px;
+  }
+  .selected-box {
+    margin: 0px 0px 10px 0px;
+  }
+  .mobile-move-counter,
+  .mobile-instructions {
+    display: none;
+  }
+  .mobile-dropdown {
+    max-width: 80%;
+  }
+  .toggle-visibility {
+    display: none;
+  }
+  @media screen and (max-width: 800px) {
+    .button-div {
+      flex-direction: column;
+      align-items: center;
+    }
+    .resetbutton,
+    .testbutton,
+    .move-counter,
+    .easymode,
+    .normalmode,
+    .hardmode {
+      font-size: 20px;
+      margin: 5px 0;
+      padding: 5px 0;
+      width: 50%;
+    }
+    .box {
+      padding: 10px 5px;
+    }
+    .panels {
+      height: 200px;
+    }
+    .container {
+      height: 250px;
+    }
+    h1 {
+      margin: 0;
+      padding: 5px 0px;
+    }
+    .normal-move-counter {
+      display: none;
+    }
+    .mobile-move-counter {
+      display: block;
+      width: 30%;
+      font-size: 32px;
+    }
+    .normal-instructions {
+      display: none;
+    }
+    .mobile-instructions {
+      display: block;
+      margin: 0px 0px 10px 0px;
+    }
+  }
